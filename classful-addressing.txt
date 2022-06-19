@@ -1,7 +1,9 @@
 IPV4 Classful addressing -
 
-The address space is divided into 5 classes
+NID - Network ID
+HID - Host ID
 
+The address space is divided into 5 classes
 
 Binary Notation -
 
@@ -25,9 +27,20 @@ E         240 - 255
 
 Number of blocks and block size in Classful IPV4 addressing -
 
-Class         Number of blocks               Block size           Application 
+Class         Number of blocks(NID)          Block size(HID)         Application 
 A                 128                        16,777,216              Unicast
 B              16,384                            65,536              Unicast
 C           2,097,152                               256              Unicast
 D                   1                       268,435,456              Multicast
 E                   1                       268,435,456              Reserved
+
+
+Default masks in IPV4 classful addressing
+
+Class     Binary                                   Dotted-Decimal     CIDR
+A         11111111 00000000 00000000 00000000      255.0.0.0           /8
+B         11111111 11111111 00000000 00000000      255.255.0.0         /16
+C         11111111 11111111 11111111 00000000      255.255.255.0       /24
+
+In classful addressing. a good number of the available addresss combinations are wasted. 
+This classful addressing has become obsolete and has been replaced by classless addressing. 
