@@ -11,7 +11,7 @@ Unicast:
 - The destination host can be in same network & different network.
 
 Multicast:
-
+- A big topic (cover if there is time)
 
 Broadcast:
 - Data transmitted from one host to all the hosts in same/different network.
