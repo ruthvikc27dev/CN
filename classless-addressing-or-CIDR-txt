@@ -1,0 +1,109 @@
+CIDR - Classless Inter-Domain Routing
+VLSM - Variable Length Subnet Masking
+
+Problems with IPV4 Classful Addressing -
+
+Class A      -    16,777,214 Hosts
+Class B      -        65,534 Hosts
+Class C      -           254 Hosts
+
+What do you do if you have 2,000 hosts?
+- Pick Class B and waste 63,000+ addresses.
+- Take 8 Class C's and have cluttered routing table entries.
+
+Solution -
+CIDR with VLSM
+
+Decimal Subnet Mask -
+255.255.255.0
+
+Binary Subnet Mast -
+11111111.11111111.11111|111.00000000
+The line can be moved to pretty much anywhere
+
+VLSM -
+11111111  -   255
+11111110  -   254
+11111100  -   252
+11111000  -   248
+11110000  -   240
+11100000  -   224
+11000000  -   192
+10000000  -   128
+00000000  -     0
+
+Subnetting with CIDR & VLSM -
+If we start with 255.255.0.0, but want to divide into smaller networks we need to take bits from the
+Host ID nad move them into the Network ID.
+
+Original Subnet Mask -
+11111111.11111111.00000000.00000000
+
+With subnetting -
+11111111.11111111.11111000.00000000
+                  Subnet ID
+
+Formulas -
+
+Number of subnets :
+- 2^n
+- n = Number of 1's in the Subnet ID
+
+Number of available host addresses:
+- 2^n - 2
+- n = Number of 0's in the Host ID
+- Host ID cannot be all 0's or all 1's
+
+Example:
+- 11111111.11111111.11111000.00000000
+- 2^5 = 32 Subnets
+- 2^11 - 2 = 2046 Available hosts in each subnet
+
+Why won't my Network work?
+
+Vista1   - 192.168.10.101
+DC1      - 192.168.10.201
+Router   - 192.168.10.200
+SM       - 255.255.255.248
+
+We need to look at everything in binary:
+
+For understanding, subnet ID is put in between pipe operators.
+11000000.10101000.00001010.|01100|101     (wrong subnet ID)
+11000000.10101000.00001010.|11001|001
+11000000.10101000.00001010.|11001|000     (Host ID cannot contain all 0's or 1's)
+11000000.10101000.00001010.|11111|000
+
+How can I fix the network?
+- With a subnet mask of 255.255.255.248 each network will be broken into blocks of 6 host addresses:
+Example :
+11000000.10101000.00001010.|00000|000     192.168.10.0       (cannot be all 0's)
+11000000.10101000.00001010.|00000|001     192.168.10.1
+11000000.10101000.00001010.|00000|010     192.168.10.2
+11000000.10101000.00001010.|00000|011     192.168.10.3
+11000000.10101000.00001010.|00000|100     192.168.10.4
+11000000.10101000.00001010.|00000|101     192.168.10.5
+11000000.10101000.00001010.|00000|110     192.168.10.6
+11000000.10101000.00001010.|00000|111     192.168.10.7       (cannot be all 1's)
+
+Network ID   - 192.168.10.0
+Host ID's    - 192.168.10.1 - 192.168.10.6
+Broadcast ID - 192.168.10.7
+
+Subnet ID can be changed as there are total 2^5 subnets possible
+00000  (as used as subnet in previous network)
+00001
+00011
+.
+.
+.
+
+
+CIDR Notation -
+
+Without CIDR Notation:
+- 192.168.10.1
+- 255.255.255.248
+
+With CIDR Notation:
+192.168.10.1/29
