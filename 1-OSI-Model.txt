@@ -1,0 +1,19 @@
+OSI - Open System Interconnection
+
+OSI 7-Layer Model -
+
+   Layer Name               Layer Number
+
+   Application                7
+   Presentation               6
+   Session                    5
+   Transport                  4 
+   Network                    3
+   Data Link                  2
+   Physical                   1
+
+
+OSI 7 Layer Model
+
+Having more layers gives greater granularity and facilitates a clear comparisions amoing network devices,
+protocols, and new technologies.
