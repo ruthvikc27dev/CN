@@ -53,7 +53,7 @@ The network Layer that is IP is responsible for getting data from one node to an
 The Transport layer mostly TCP/UDP is responsible for ensuring that data gets to right application running on those nodes.
 
 Application Layer:
-Protocols allow you to  browse web or send emails are some common ones.
+Protocols allow you to  browse web or send emails are some of the common ones.
 Protocols - HTTP, HTTPS, SMTP
 
 You can think of layers like different aspects of package being delivered -
