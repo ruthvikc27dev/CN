@@ -1,0 +1,65 @@
+Protocol -
+A defined set of standards that computers must follow in order to communicate properly.
+
+Computer networking -
+The name we've given to the full scope of how computers communicate with each other.
+
+In this course, TCP/IP model is being selected.
+
+#             Layer Name       Protocol              Protocol Data Unit           Addressing
+5            Application     HTTP, SMTP, etc..           Messages                    n/a 
+4            Transport       TCP/UDP                     Segment                     Port #'s 
+4            Network         IP                          Datagram                    IP address 
+2            Data Link       Ethernet, Wi-Fi             Frames                      MAC Address
+1            Physical        10 Base T, 802.11           Bits                        n/a
+
+Physical Layer:
+Represents the physical devices that interconnect computers. This includes specifications for the networking cables and connectors that join 
+devices together, along with the specifications that signals are sent over these connections.
+
+Data Link or Network Interface or Network Access Layer:
+Responsible for defining a common way of interpreting these signals so network devices can communicate.
+The most common protocol is Ethernet. Also now a days wireless are becoming more popular.
+
+Ethernet:
+The Ethernet standards also define protocol Responsible for getting data to nodes on the same network or link.
+
+Network Layer, also sometimes called Internet Layer:
+Allows different networks to communicate with each other through devices known as routers.
+
+Internetwork:
+A collection of networks connected together through routers, the most famous of these being the Internet.
+
+While the Data Link Layer is responsible for getting the data across single link, the network layer is
+responsible for getting data delivered across the collection of networks.
+
+The most common protocol used is IP - Internet Protocol
+
+IP is the heart of the Internet and most smaller networks around the world.
+
+The network software is usually divided into client and server.
+
+Transport Layer:
+Sorts out which client and server programs are supposed to get that data.
+
+Most common protocol used in this Layer is TCP.
+
+TCP - Transmission Control Protocol
+UDP - User Datagram Protocol
+
+The big difference between these two is TCP provides mechanisms to ensure that data is reliably delivered, while UDP does not.
+
+The network Layer that is IP is responsible for getting data from one node to another node.
+The Transport layer mostly TCP/UDP is responsible for ensuring that data gets to right application running on those nodes.
+
+Application Layer:
+Protocols allow you to  browse web or send emails are some common ones.
+Protocols - HTTP, HTTPS, SMTP
+
+You can think of layers like different aspects of package being delivered -
+
+The physical layer is the delivery truck and the roads.
+The data link layer is how the delivery trucks get from one intersection to the next over and over.
+The network layer identifies which roads to be taken from address A to address B.
+The transport layer ensures that delivery driver knows how to knock on your door to tell you your package has arrived.
+The application layer is the contents of the package itself. 
