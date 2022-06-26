@@ -1,0 +1,54 @@
+Cables -
+Allow you to form point-to-point networking connections. These are networks where only a single device
+at each end of the link exists.
+
+Hubs -
+- A physical layer device that allows for connections from many computers at once. 
+- All the devices connected to a hub will end up talking to all other devices at the same time.
+- It is up to each system connected to the hub to determine if the incoming data was meant for them, or to
+igore it if it isn't.
+- This causes a lot of noise on the network and creates what's called a collision domain.
+
+Collision domain:
+- A network segment where only one device can communicate at a time.
+- If multiple systems try sending data at the same time, the electrical pulses sent across the cable can interfere with each other.
+- This causes these systems to have to wait for a quiet period before they sending their data again.
+- It really slows down network communications, and is the primary reason hubs are fairly rare.
+- They are mostly historical artifacts today.
+
+Switches -
+- A much more common way of conecting many computers is with a more sophisticated device, known as network Switch
+originally known as a switching hub.
+- A switch is very similar to a hub, since you can connect many devices to it so they can communicate.
+- The difference is that while a hub is layer 1 or physical layer device, a switch is a level 2 or data link device.
+- This means that a switch can actually inspect the contents of the ethernet protocol data being sent around the network,
+determine which system the data is indended for and then only send that data to that one system.
+- This reduces or even completely eliminates the size of collision domains on a network.
+- If you guessed that this will lead to fewer retransimisiions and a higher overall throughtput, you're right.
+
+Routers -
+
+Hubs & Switches:
+The primary devics used to connect computers on a single network usually referred to as a LAN, or Local Area Network.
+
+- But we often want to send or receive data computers on other networks. 
+- This is where routers come into play.
+- A devices that knows how to forward data between independent networks.
+- While a hub is a layer one device and a switch is a layer two device. A router operates at layer three,  a network layer.
+- Just like a switch can inspect ethernet data to determine where to send things, a router can inspect IP data to determine where to send things
+- Routers store internal tables containing information about how to route traffic between lots of different networks all over the world.
+- The most common type of router you'll see is one for a home network, or small office. These devices generally don't have very detailed routing tables.
+- The purpose of these routers is mainly just to take traffic originating from inside the home, or office LAN, and to forward it along to the ISP, or Internet Service Provider.
+- Once traffic is at the ISP, a way more sophisticated type of router takes over.
+- These core routers form the backbobe of the internet and are directly responsible for how we send and receive data all over the internet every single day.
+- Core ISP routers don't just handle a lot more traffic than a home or office router but also they also have
+to deal with much more complexity in making decision about where to send traffic. 
+- A core router usually has many different connections to many other routers. 
+- Routers share data with each other via a protocol known as BGP, or Border Gateway Protocol.
+
+Border Gateway Protocol:
+- Routers share data with each other via this protocol, which lets them learn about the most optimal paths to forward traffic.
+- That lets them learn about the most optimal paths to forward traffic.
+- When you open a web browser and load a webpage, the traffic between computers and the web servers could have travel over dozens of different routers.
+- The internet is incredibly large and complicated.
+- And routers are global guides for getting traffic to the right places.
