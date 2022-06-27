@@ -48,3 +48,35 @@ and fragile.
 - Fiber can also transport data over much longer distances than copper can without suffering potential data loss.
 - Now you know a lot more about the pros and cons of fiber cables, but keep in mind, you'll be way more likely to run into fiber cables
 in computer data centers than you would in an office or at home.
+
+-------------------------------------------------------------------------------------------------------------------------
+
+Twisted pair cabling -
+- The most common type of cabling used for connecting computing devices is known as twisted pair.
+- It is called a twisted pair cable because it features pairs of copper wires that are twisted together.
+- These pairs act as a single conduit for information, and their twisted nature help protect against electromagnetic 
+interference and crosstalk from neighboring pairs.
+- A standard cat 6 cable has eight wires consisting of four twisted pairs inside a single jacket.
+- Exactly how many pairs are actually in use depends on the transmission technology being used.
+- But in all modern forms of networking, it's important to know that these cables allow for duplex communication.
+
+Duplex communication:
+The concept that information can flow in both directions across the cable.
+
+Singlx communication:
+The data can flow only in one direction or the process is unidirectional.
+
+- Think of a baby monitor, where the transmission of data only goes in one direction making it a simplex communication.
+- A phone call on the other hand is duplex since both parties can listen and speak.
+
+- The way networking cables ensure that duplex communication is possible is by reserving one or two pairs for
+communication in one direction, they then use the other one or two pairs for communicating in the other direction.
+- So, devices in either side of a networking link can both communicate with each other at the exact same time.
+- This is known as full duplex.
+
+- If there's something wrong with the connection, you might see a network link degrade and report itself as operating as half-duplex.
+
+Half duplex:
+While communication is possible in each direction, only one device can be communicating at a time.
+
+-------------------------------------------------------------------------------------------------------------------------
