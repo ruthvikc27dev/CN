@@ -1,0 +1,14 @@
+CSMA/CD:
+used to determine when the communications channels are clear, and when a device is free to transmit data.
+
+- The way CSMA/CD works is actually pretty simple.
+- If there is no data currently being transmitted on the network segment, a node will feel free to send data.
+- If it turns out that two or more computers end up trying to send data at the same time, the computers
+detect this collision and stop sending data.
+- Each device involved with the collision then waits a random interval of time before trying to send data again.
+- This random interval helps to prevent all the computers involved in the collision from colliding again 
+the next time they try to transmit anything.
+- When a network segment is a collision domain, it means all devices on that segment receive all communication
+across the entire segment.
+- This means we need a way to identify which node the transmission was actually meant for.
+- This is where a Media accress control address or MAC address comes into play.

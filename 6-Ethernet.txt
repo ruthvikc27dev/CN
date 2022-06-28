@@ -1,0 +1,18 @@
+Warning: A history less on old-school technology is headed your way.
+
+- Here it goes. Ethernet is a fairly old technology.
+- It first came into being in 1980 and saw its first fully polished standardization in 1983. 
+- Since then, a few changes have been introduced primarily in order to support ever-increaing bandwith needs.
+- For the most part though, the Ethernet in use today is comparable to the Ethernet standards as first 
+publushed all those years ago.
+- In 1983, computer networking was totally different than it is today.
+- One of the notable differences in land topology was that the switch or switchable hub hadn't been invented yet.
+- This meant that frequently many or all devices on a network shared a single collision domain. 
+- You might remember from our discusson about hubs and switches that a collision domain is a network segment where only one 
+devices can speak at a time.
+- This is because all data in a collision domain is sent to all the nodes connected to it.
+- If two computer were to send data across the wire at the same time, this would result in literal collisions of 
+the electrical current representing our ones and zeros, leaving the end result unintelligible.
+
+Ethernet as a protocol solved this problem by using a technique known as carrier sense multiple access with 
+collision detection.

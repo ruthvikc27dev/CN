@@ -1,0 +1,57 @@
+Different ways of Ethernet Transmission in IPV4 -
+
+Cast - To how many hosts the data to be transmitted.
+
+Uni     -  one to one
+Borad   -  one to all
+Multi   -  one to many
+
+Unicast:
+- Data transmitted from one host to another host.
+- The destination host can be in same network & different network.
+
+- A unicast Transmission is always meant for just one receiving address.
+- At the Ethernet level this is done by looking at a special bit in the destination MAC address.
+- If the least significant bit in the first octet of a destination address is set to zero, it means that Ethernet
+frame is intented for only the destination address.
+- This means it would be sent to all devices on the collision domain, but only actually received and processed by the intented destination.
+
+
+Multicast:
+- A big topic (cover if there is time)
+
+- If the least significant bit in the first octet of a destination address is set to one, it means you're dealing
+with a Multicast frame.
+- A Multicast frame is similarly set to all devices on the local network signal.
+- What is different is that it will be accepted or discarded by each device depending on criteria aside from thier
+own hardware MAC address.
+- Network intrefaces can be configured to accept lists of configured Multicast addresses for these sort of communication.
+
+
+Broadcast:
+- Data transmitted from one host to all the hosts in same/different network.
+
+- An Ethernet Broadcast is sent to every single device on a LAN.
+- This is accomplished by using a special destination known as Broadcast address.
+- The Ethernet Broadcast address is all Fs. FF:FF:FF:FF:FF:FF
+- Ethernet Broadcasts are used so that devices can learn more about each other.
+- Don't worry, you;ll be learning more about Broadcast and a technology known as address resolution protocol later
+in this course.
+- Bit for now, let's move on to dissecting the Ethernet frame.
+
+N1  
+- Network 1
+- IP - 90.0.0.0
+
+N2  
+- Network 2
+- IP - 92.0.0.0
+
+- Limited Broadcast
+    - If a host in N1 wants to send data to all other hosts in the same Network N1.
+    - IP address of Network N1  -  90.0.0.0
+    - Broadcast subnet          -  255.255.255.255
+
+- Direct Broadcast
+    - If a host in N1 wants to send data to all other hosts in the different Network N2.
+    - Broadcast destination IP - 92.255.255.255

@@ -1,0 +1,27 @@
+MAC Address -
+- A globally unique identifier attached to an individual network interface.
+- It is a 48-bit number normally represented by six groupings of two hexadecimal numbers.
+- Just like how binary is a way to represent numbers with only two digits, hexadecimal is a way to represent number
+using 16 digits.
+- Since we don't have numerals to represent any individual digit larger than nine, hexadecimal numbers employed the letters
+A, B, C, D, E and F to represent 11, 12, 13, 14, and 15.
+- Another way to reference each group of numbers in a MAC address is an octet.
+- In computer networking, any number that can be represented by 8 bits.
+- In this case, two hexadecimal digits can represent the same numbers that 8 bits can.
+- Now you many have noticed that we mentioned that MAC addresses are globally unique, which might have left you
+wondering how that could possibly be.
+- The short answer is that a 48 bit number is much larger than you might expect.
+- The total number of a possible MAC addresses that could exist is 2^48 or > 281 trillion addresses.
+
+- A MAC address is split into two sections.
+- The first three octets of a MAC address are known as the organizationally unique identifier or OUI.
+- These are assigned to individual hardware manufacturers by the IEEE or the institute of Electrical and Electronics Engineers.
+- This is a useful bit of information to keeping your back pocket because it means that you can always identify the manufacturer
+of a network interface by its MAC address.
+- The last three octets of MAC address can be assigned in any way that the manufacturer would like with the
+condition that they only assign each possible address once to keep all MAC addresses globally unique.
+
+Ethernet uses MAC addresses to ensure that the data it sends has both an address for the machine that sent the
+transmission, as well as the one the transmission was intended for.
+
+In this way, even on network segment, acting as a single collision domain, each node on that network knows when traffic is intended for it.
