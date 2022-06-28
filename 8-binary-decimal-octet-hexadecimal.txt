@@ -1,0 +1,268 @@
+
+Decimal -
+
+Deci -> 1/10
+
+- is a Base 10 system
+- 10 different numbers
+- 0-9
+- This system is used for everyday counting.
+
+
+Binary -
+
+Bi -> two
+
+- is a Base 2 system.
+- It is very useful for computers or any type digital circuits.
+- 0 & 1
+- In a typical digital computer zero means off, one means that the system is on state.
+
+Octal -
+
+octa -> eight
+
+- is a base 8 system
+- 8 numbers we can use in this system.
+- 0-7
+
+Hexadecimal -
+
+hexa    -> six
+decimal -> ten
+
+- is a base 16 system
+- 16 numbers we can use in this system
+- 0-9 & A-F (for representing 10-15)
+
+
+---------------------------------------------Decimal---------------------------------------------------
+
+Decimal to other -
+
+Decimal to Binary -
+
+Decimal number - 348
+
+Divide by 2
+
+                       (Least Significant Bit)
+              Q           R
+348 / 2   =   174         0 
+174 / 2   =    87         0
+87 / 2    =    43         1
+43 / 2    =    21         1
+21 / 2    =    10         1
+10 / 2    =     5         0
+5 / 2     =     2         1
+2 / 2     =     1         0
+1 / 2     =     0         1
+                       (Most Significant Bit)
+256 128 64 32 16 8 4 2 1
+  1   0  1  0  1 1 1 0 0
+
+256 + 64 + 16 + 8 + 4 = 348
+
+-----------------------------------------------
+
+Decimal to Octal
+
+Decimal number - 348
+
+divide by 8
+                    Least Significant Digit
+              Q        R
+348 / 8 =    43        4
+ 43 / 8 =     5        3
+  5 / 8 =     0        5
+                    Most Significant Digit
+
+                    348 (10)  ->  534 (8)
+
+-----------------------------------------------
+
+Decimal to Hexadecimal -
+
+Decimal number - 348
+
+Divide by 16
+                    Least Significant Digit
+               Q         R
+348 / 16  =   21         12
+ 21 / 16  =    1          5
+  1 / 16  =    0          1      
+                    Most Significant Digit
+
+                    348 (10) - > 15C (16)
+
+
+---------------------------------------------Binary---------------------------------------------------
+
+Binary to Decimal -
+
+steps:
+1) Starting from LSB multiply each positional value with 2^n where n is position.
+2) Add all the results.
+           3 2 1 0
+Binary -   1 0 1 1
+
+= (1 * 2^0) + (1 * 2^1) + (0 * 2^2) + (1 * 2^3)
+= 1 + 2 + 0 + 8
+= 11
+
+1011(2) -> 11(10)
+
+-----------------------------------------------
+
+Binary to Octal -
+
+Min Binary of 3 bits - 0
+Max Binary of 3 bits - 7
+
+Octal - 0-7
+
+steps:
+1) Starting from LSB, Group 3 bits.
+2) If 1 (or) 2 bits less in the 3 bit Group, add 0s after MSB to form 3 bit Group.
+3) Covert to decimal equivalent for each group of 3 bits.
+
+Binary: 10110(2) -> ?(8)
+
+G2    G1
+010   110
+Covert to decimal
+2     6
+
+10110(2) -> 26(8)
+
+-----------------------------------------------
+
+Binary to Hexadecimal -
+
+Min Binary of 3 bits - 0
+Max Binary of 3 bits - 15
+
+Hexadecimal - 0-15
+
+steps:
+1) Starting from LSB, Group 4 bits.
+2) If 1 (or) 2 or 3 bits less in the 3 bit Group, add 0s after MSB to form 4 bit Group.
+3) Covert to decimal equivalent for each group of 4 bits.
+
+Binary - 101011110
+
+G3    G2    G1
+0001  0101  1110
+convert to decimal
+1     5     14
+covert to Hexadecimal
+1     5     E
+
+101011110(2)  ->   15E(16)
+
+-----------------------------------------------Octal-------------------------------------------------
+
+Octal to Decimal -
+
+steps -
+1) multiply positional value with 8^n where n is the position.
+2) Add all the results.
+
+123(8) -> ?(10)
+
+2 1 0
+1 2 3
+
+= (3 * 8^0) + (2 * 8^1) + (1 * 8^2)
+= 3 + 16 + 64
+= 83
+
+123(8) -> 83(10)
+
+
+-----------------------------------------------
+
+Octal to Binary -
+
+Octal 
+- 0 to 7
+- Every position is represented in 3 bit group
+
+Binary
+- 0/1
+
+123(8) -> ?(2)
+
+G3    G2   G1
+ 1     2    3
+convert to Binary
+001   010  011
+
+123(8) -> 001010011(2)
+
+-----------------------------------------------
+
+Octal to Hexadecimal -
+
+steps -
+1) Convert octal to Binary.  (check previous example)
+
+123(8) -> 001010011(2)
+
+2) Covert Binary to Hexadecimal.
+
+0000 0101 0011
+   0    5    3
+
+123(8) -> 053(16)
+
+
+-----------------------------------------------Hexadecimal-------------------------------------------------
+
+Hexadecimal to Decimal -
+
+steps -
+1) multiply positional value with 16^n where n is the position.
+2) Add all the results.
+
+123(16) -> ?(10)
+
+= (3 * 16^0) + (2 * 16^1) + (1 * 16^2)
+= 3 + 32 + 256
+= 291
+
+123(16) -> 291(10)
+
+-----------------------------------------------
+
+Hexadecimal to Binary -
+
+Every position is represented in 4 bit group
+
+123(16)
+1    2    3
+0001 0010 0011
+
+123(16) -> 000100100011(2)
+
+
+-----------------------------------------------
+
+Hexadecimal to Octal -
+
+123(16) -> ?(8)
+
+steps:
+1) Covert to binary.
+1    2    3
+0001 0010 0011
+
+2) Covert from binary to octal.
+000 100 100 011
+0   4   4   3
+
+123(16) -> 0443(8)
+
+------------------------------------------------------------------------------------------------
+
+
