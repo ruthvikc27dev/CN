@@ -1,0 +1,110 @@
+- Just like the data packets at the Ethernet layer have a specific name, Ethernet frames,
+so do packets at the network layer.
+- Under the IP protocol, a packet is usually referred to as an IP datagram.
+- Just like any Ethernet frame, an IP datagram is highly structured series of fields that are strictly defined.
+- The two primary sections of an IP datagram are the header and the payload.
+- You'll notice that an IP datagram header contains a lot more data than an Ethernet frame header does.
+
+IP datagram header -
+
+                                           Bits
+0         4                 8                             16         19                          31
+| Version |  Header Length  |         Service type        |            Total Length              |
+|                   Identification                        | Flags    |      Fragment Offset      |
+|           TTL             |        Protocol             |      Header Checksum                 |
+|                                      Source IP Address                                         |
+|                                 Destination IP Address                                         |
+|                    Options                                               |    Padding          |
+
+
+Version (4 bits):
+- The very first field is four bits, and indicates what version of IP is being used.
+- The most common version of IP is version four or IPv4
+- Version six or IPv6, is rapidly seeing more widespread adoption, 
+- But we'll cover that in a later module.
+
+Header Length field (4 bits):
+- This is also a four but field that declares how long the entire header is.
+- This is almost always 20 bytes in Length when dealing with IPv4.
+- In fact, 20 bytes is the minimum length of an IP header.
+- You could not fit all the data you need for a properly formatted IP header in any less space.
+- Next, we have the Service Type field.
+
+Service type (8 bits):
+- These 8 bits can be used to specify details about quality of service, or QOS, technologies.
+- The important takeaway about QOS is that there are services that allow routers to make decisions about
+which IP datagram may be more important than others.
+- The next field is a 16 bit field, known as Total Length field.
+
+Total Length field (16 bit):
+- Indicates the total length of the IP datagram it's attached to.
+
+Identification field (16 bit):
+- The Identification field, is a 16-bit number that's used to group messages together.
+- IP datagrams have a maximum size and you might already be able to figure out what that is.
+- Since the total length field is 16 bits, and this field indicates the size of an individual datagram, 
+the maximum size of a single datagram is the largest number you can represent with 16 bits: 65,535.
+- If the total amount of data that needs to be sent is larger than what can fit in a single datagram, the IP layer needs
+to split this data up into many individual packets.
+- When this happens, the Identification field is used so that the receiving end understands that every packet with
+the same value in that field is part of the same transmission.
+- Next up, we have two closely related fields.
+
+The Flag field and the Fragmentation Offset field (16 bits):
+Flag field:
+- Used to indicate if a datagram is allowed to be Fragmented, or to indicate that the datagram has already been fragmented.
+- or to indicate that the datagram has already been fragmented.
+Fragmentation:
+- The process of taking a single IP datagram and splitting it up into several smaller datagrams.
+- While most networks operate with similar setting in terms of what size an IP datagram is allowed to be,
+sometimes, this could be configured differently.
+- If a datagram has to cross from a network allowing a larger datagram size to one with a smaller datagram size, 
+the datagram would have to be fragmented into samller ones.
+- The Fragmentation offset field contains values used by the receiving end to take all the parts of a fragmented packet and 
+put them back together in the correct order.
+- Let's move along to the time to live or TTL field.
+
+TTL (8 bits):
+- This field is an 8 bit field that indicates how many router hops a datagram can traverse before it's thrown away.
+- Every time a datagram reaches a new router, that router decrements the TTL field by one.
+- Once this value reaches zero, a router knows it doesn't have to forward the datagram any further.
+- The main purpose of this field to make sure that when there's a misconfiguration in routing that causes an endless loop,
+datagrams don't spend all eternity trying to reach their destination.
+- An endless loop could be when router A thinks router B is the next loop, spoiler alert.
+- In an upcoming module, you'll learn that the TTL field has valuable troubleshooting qualities, but secrets like these are 
+only released to those who keep going.
+- After the TTL field, you'll find the protocol field.
+
+Protocol field (8 bit):
+- This is another 8 bit field that contains data about what transport layer protocol is being used.
+- The most common transport layer protocols are TCP and UDP, and we'll cover those in detail in the next few lessons.
+- So next, we have the header Checksum field.
+
+Header Checksum Field (16 bit):
+- This field is a Checksum of the contents of the entire IP datagram header.
+- It functions very like the Ethernet Checksum field we discussed in the last module.
+- Since the TTL field has to be recomputed at every router that a datagram touches, the Checksum field necessarily changes, too.
+- After all of that, we finally get to two very important fields, the source and destination IP address fields.
+
+Source IP address (32 bit):
+Destination IP address (32 bit):
+- Remember that an IP address is a 32 bit number so, it should come as no surprise that these fields are each 32 bits long.
+- Up next, we have the IP options field.
+
+Options ():
+- This is an optional field and is used to set special characteristics for datagrams primarily used for test purposes.
+- The IP options field is usually followed by a padding field.
+
+Padding ():
+- Since the IP options field is both optional and variable in length, the padding field is just a series of zeros used
+to ensure the header is the correct total size.
+
+- Now that you know about all the parts of an IP datagram, you might wonder how this relates to what we've learned so far.
+- You might Remember that in our breakdown of an Ethernet frame, we mentioned a section we described as the data payload section.
+- This is exactly what the IP datagram is, and this process is known as encapsulation.
+- The entire contents of an IP datagram are encapsulated as the payload of an Ethernet frame.
+- You might have picked up on the fact that our IP datagram also has a payload section.
+- The contents of this payload are the entirety of a TCP or UDP packet which we'll cover later.
+- Hopefully, this helps you better understand why we talk about networking in terms of layers.
+- Each layer is needed for the one above it.
+

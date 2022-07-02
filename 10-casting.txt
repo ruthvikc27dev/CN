@@ -14,7 +14,7 @@ Unicast:
 - At the Ethernet level this is done by looking at a special bit in the destination MAC address.
 - If the least significant bit in the first octet of a destination address is set to zero, it means that Ethernet
 frame is intented for only the destination address.
-- This means it would be sent to all devices on the collision domain, but only actually received and processed by the intented destination.
+- This means it would be sent to all devices on the collision domain, but only actually received and processed by the intended destination.
 
 
 Multicast:
@@ -22,7 +22,7 @@ Multicast:
 
 - If the least significant bit in the first octet of a destination address is set to one, it means you're dealing
 with a Multicast frame.
-- A Multicast frame is similarly set to all devices on the local network signal.
+- A Multicast frame is similarly sent to all devices on the local network signal.
 - What is different is that it will be accepted or discarded by each device depending on criteria aside from thier
 own hardware MAC address.
 - Network intrefaces can be configured to accept lists of configured Multicast addresses for these sort of communication.
@@ -35,7 +35,7 @@ Broadcast:
 - This is accomplished by using a special destination known as Broadcast address.
 - The Ethernet Broadcast address is all Fs. FF:FF:FF:FF:FF:FF
 - Ethernet Broadcasts are used so that devices can learn more about each other.
-- Don't worry, you;ll be learning more about Broadcast and a technology known as address resolution protocol later
+- Don't worry, you'll be learning more about Broadcast and a technology known as Address Resolution Protocol later
 in this course.
 - Bit for now, let's move on to dissecting the Ethernet frame.
 
