@@ -1,0 +1,37 @@
+
+- Congrats! you now understand how both MAC addresses are used at the data link layer and how IP addresses are used at the 
+network layer.
+
+- Now we need to discuss how these two separate addresses types relate to each other.
+- This is where Address Resolution Protocol or ARP comes into play.
+- ARP: A Protocol used to discover the hardware address of a node with a certain IP address.
+- Once an IP datagram has been fully formed, it needs to be encpsulated inside an Ethernet frame.
+- This means, that the transmitting device needs a destination MAC address to complete the Ethernet frame header.
+- Almost all network connected devices will retaining local ARP table.
+
+ARP table:
+- A list of IP addresses and the MAC addresses associated with them.
+- Let's say we want to send some data to the IP address 10.20.30.40.
+- It might be the case that this destination doesn't have an entry in the ARP table.
+- When this happens, the node that wants to send data send a broadcast ARP message to the MAC broadcast address which is all Fs.
+- These kinds of broadcast ARP messages are delivered to all computers on the local network.
+- When the network interface that's been assigned an IP of 10.20.30.40 receives this ARP broadcast, it sends back what's known as an ARP response.
+- This response message will contain the MAC address for the network interface in question.
+- Now, the transmitting computer knows what MAC address to put in the destination hardware address field and the Ethernet frame is ready for delivery.
+- It will also likely store this IP address in its local ARP table.
+- So that it won't have to send an ARP broadcast the next time he needs to comminicate with this IP.
+- Handy. ARP table entries generally expire after short amount of time to ensure changes in the network are accounted for.
+- So don't expect it to stick around, the way I expect you to stick around for the next ungraded quiz.
+
+Command to retrieve ARP table data in windows -
+arp -a
+
+For IPv4:
+- Router maintains an ARP table and every computer in the LAN maintains an ARP table.
+- Even a switch maintains ARP table
+
+For IPv6:
+- It might not, if it isn’t using either Ethernet or IPv4 (or both).
+- IPv6 doesn’t use ARP. Nor do most non-Ethernet media.
+- There are quite a lot of devices in the worlds cellular networks that are IPv6 only, 
+many of which also have no Ethernet interfaces, and yet they route.
